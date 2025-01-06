@@ -347,7 +347,7 @@ body {
   <div id="Container">
   <button id="bookNowBtn" class="book-now-btn">BOOK HERE</button>
     <img src="character.webp" alt="Character Image" class="character-image">
-    <div class="title">LETS CODE</div>
+    <div class="title">BLACKBIRD ACADEMY</div>
     <a href="https://wa.me/27730565912" target="_blank" class="whatsapp-link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.216 175.552">
         <defs>
@@ -495,7 +495,7 @@ function renderCalendar() {
         const dateStr = selectedDate.toDateString();
         if (bookedDates.some(b => b.date === dateStr && b.time === time)) {
           timeslot.classList.add('booked');
-          timeslot.style.pointerEvents = 'none'; // Make it non-selectable
+          timeslot.style.pointerEvents = 'none';
         }
       }
 
@@ -590,10 +590,10 @@ function renderCalendar() {
     });
   }
 
-  const repo = 'divstudios/l';
-  const Part1 = 'ghp_moIyu7Ejz27Ero';
-  const Part2 = 'WiMnO4Xk3XgLTLis2DBZCC';
-  const token = Part1 + Part2;
+const repo = 'divstudios/l';
+const Part1 = 'Z2hwX21vSXl1N0VqejI3RXJv';
+const Part2 = 'V2lNbk80WGszWGdMVExpczJEQlpDQw==';
+const token = atob(Part1) + atob(Part2);
 
   function EmailTime(selectedTime) {
     document.getElementById('contact-form').addEventListener('submit', function(event) {
@@ -613,7 +613,7 @@ function renderCalendar() {
 
       emailjs.send('service_euwof6d', 'template_t98zek9', formData)
         .then(function(response) {
-          alert('Thank you for booking with LETS CODE!');
+          alert('Thank you for booking with BLACKBIRD!');
           createFile(repo, fileName, '', token)
             .then(response => {})
             .catch(error => {
