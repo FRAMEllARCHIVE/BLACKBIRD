@@ -364,36 +364,64 @@ body {
   })();
 
   document.addEventListener('DOMContentLoaded', () => {
-    const repo = 'divstudios/l';
+  const repo = 'divstudios/l';
 
-    fetchBookedDates(repo).then(files => {
-      bookedDates = files.map(file => {
-        const parts = file.split(' at ');
-        
-        if (parts.length !== 2) {
-          return null;
-        }
-        
-        const [datePart, timePart] = parts;
-        const date = new Date(datePart);
-        
-        if (isNaN(date.getTime())) {
-          return null;
-        }
-        
-        return {
-          date: date.toDateString(),
-          time: timePart.replace('.txt', '')
-        };
-      }).filter(entry => entry !== null);
+  fetchBookedDates(repo).then(files => {
+    bookedDates = files.map(file => {
+      const parts = file.split(' at ');
 
-      renderCalendar();
-      renderTimeslots();
-    }).catch(error => {
-      console.error('Error fetching booked dates:', error);
-    });
+      if (parts.length !== 2) {
+        return null;
+      }
+
+      const [datePart, timePart] = parts;
+
+      const date = parseCustomDate(datePart.trim());
+
+      if (!date) {
+        return null;
+      }
+
+      return {
+        date: date.toDateString(),
+        time: timePart.replace('.txt', '')
+      };
+    }).filter(entry => entry !== null);
+
+    renderCalendar();
+    renderTimeslots();
+  }).catch(error => {
+    console.error('Error fetching booked dates:', error);
   });
+});
 
+function parseCustomDate(dateString) {
+  const months = {
+    Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+    Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11
+  };
+
+  const parts = dateString.split(' ');
+  if (parts.length !== 4) {
+    return null;
+  }
+
+  const [dayOfWeek, month, day, year] = parts;
+
+  const monthIndex = months[month];
+  if (monthIndex === undefined) {
+    return null;
+  }
+
+  const dayNum = parseInt(day, 10);
+  const yearNum = parseInt(year, 10);
+
+  if (isNaN(dayNum) || isNaN(yearNum)) {
+    return null;
+  }
+
+  return new Date(yearNum, monthIndex, dayNum);
+}
   const calendarOverlay = document.getElementById('calendarOverlay');
   const bookNowBtn = document.getElementById('bookNowBtn');
   const calendar = document.getElementById('calendar');
@@ -512,16 +540,6 @@ function renderCalendar() {
     calendarOverlay.classList.remove('show');
     contactForm.classList.remove('show');
   });
-
-  function adjustFontSize() {
-    const containerHeight = document.getElementById('Container').clientHeight;
-    const titleElement = document.querySelector('.title');
-    const fontSize = containerHeight * 0.13;
-    titleElement.style.fontSize = fontSize + 'px';
-  }
-
-  adjustFontSize();
-  window.addEventListener('resize', adjustFontSize);
 
   function adjustSvgSize() {
     const container = document.getElementById('Container');
