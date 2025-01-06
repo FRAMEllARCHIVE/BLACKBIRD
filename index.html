@@ -541,21 +541,6 @@ function renderCalendar() {
     contactForm.classList.remove('show');
   });
 
-  function adjustSvgSize() {
-    const container = document.getElementById('Container');
-    const svgElement = document.querySelector('.whatsapp-link svg');
-
-    if (container && svgElement) {
-      const containerHeight = container.clientHeight;
-      const size = containerHeight * 0.2;
-      svgElement.style.height = size + 'px';
-      svgElement.style.width = size + 'px';
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', adjustSvgSize);
-  window.addEventListener('resize', adjustSvgSize);
-
   function fetchBookedDates(repo) {
     const apiUrl = `https://api.github.com/repos/${repo}/contents`;
 
