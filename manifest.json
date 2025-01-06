@@ -1,1 +1,15 @@
-
+{
+  "name": "BLACKBIRD",  
+  "short_name": "BLACKBIRD",
+  "icons": [
+    {
+      "src": "512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "https://framellarchive.github.io/BLACKBIRD/",
+"theme_color": "#000000",
+  "display": "standalone",
+      "capture_links": "new-client"
+}
