@@ -1,6 +1,7 @@
 {
   "name": "BLACKBIRD",  
   "short_name": "BLACKBIRD",
+   "description": "BOOK LESSONS WITH BLACKBIRD MUSIC ACADEMY",
   "icons": [
     {
       "src": "512x512.png",
