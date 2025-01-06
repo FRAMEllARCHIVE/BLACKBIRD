@@ -9,7 +9,7 @@
     }
   ],
   "start_url": "https://framellarchive.github.io/BLACKBIRD/",
-"theme_color": "#000000",
+  "theme_color": "#FFFFFF",
   "display": "standalone",
-      "capture_links": "new-client"
+  "capture_links": "new-client"
 }
