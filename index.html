@@ -40,22 +40,31 @@ body {
       background-color: transparent;
     }
 
+.title, .subtitle {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  color: black;
+  z-index: 2;
+  letter-spacing: 0.1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 .title {
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    position: absolute;
-    top: 12%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    white-space: nowrap;
-    font-size: 8.8vw;
-  font-family: 'Henny Penny', cursive;  
-  
-  background: transparent;
-    color: black;
-    z-index: 2;
-    letter-spacing: 0.1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  top: 12%;
+  font-size: 8.8vw;
+  font-family: 'Henny Penny', cursive;
+}
+
+.subtitle {
+  top: calc(12% + 8.8vw + 10px);
+  font-size: 3vw;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  color: black;
 }
     
 @keyframes animate1 {
@@ -312,23 +321,6 @@ body {
   color: #ccc;
   cursor: not-allowed;
 }
-
- .subtitle {
-      user-select: none;
-      -webkit-tap-highlight-color: transparent;
-      position: absolute;
-      top: 21%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      white-space: nowrap;
-      font-size: 2.8rem;
-      font-family: 'Montserrat', sans-serif;
-      color: black;
-      z-index: 2;
-      letter-spacing: 0.2rem;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-    }
-
     
   </style>
 </head>
