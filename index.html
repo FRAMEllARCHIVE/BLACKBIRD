@@ -313,6 +313,51 @@ body {
   cursor: not-allowed;
 }
 
+ .subtitle {
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      font-size: 5vw;
+      font-family: 'Montserrat', sans-serif;
+      color: black;
+      z-index: 2;
+      letter-spacing: 0.05rem;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .social-media-links {
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      gap: 20px;
+      z-index: 5;
+    }
+
+    .social-media-links a {
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+    }
+
+    .social-media-links a img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .social-media-links a img:hover {
+      transform: scale(1.2);
+    }
+    
   </style>
 </head>
 <body>
@@ -344,6 +389,33 @@ body {
     <div id="timeslots" class="timeslots"></div>
   </div>
 
+
+
+
+
+    <button id="bookNowBtn" class="book-now-btn">BOOK HERE</button>
+    <img src="512x512.png" alt="Character Image" class="character-image">
+    <div class="title">BLACKBIRD</div>
+    <div class="subtitle">Music Academy</div>
+    <a href="https://wa.me/27714016332" target="_blank" class="whatsapp-link">
+      <!-- (WhatsApp icon omitted for brevity) -->
+    </a>
+    <div class="social-media-links">
+      <a href="https://www.facebook.com/yourpage" target="_blank">
+        <img src="facebook-icon.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/yourpage" target="_blank">
+        <img src="instagram-icon.png" alt="Instagram">
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+  
   <div id="Container">
   <button id="bookNowBtn" class="book-now-btn">BOOK HERE</button>
     <img src="512x512.png" alt="Character Image" class="character-image">
@@ -363,6 +435,15 @@ body {
         <path fill="#fff" fill-rule="evenodd" d="M68.772 55.603c-1.378-3.061-2.828-3.123-4.137-3.176l-3.524-.043c-1.226 0-3.218.46-4.902 2.3s-6.435 6.287-6.435 15.332 6.588 17.785 7.506 19.013 12.718 20.381 31.405 27.75c15.529 6.124 18.689 4.906 22.061 4.6s10.877-4.447 12.408-8.74 1.532-7.971 1.073-8.74-1.685-1.226-3.525-2.146-10.877-5.367-12.562-5.981-2.91-.919-4.137.921-4.746 5.979-5.819 7.206-2.144 1.381-3.984.462-7.76-2.861-14.784-9.124c-5.465-4.873-9.154-10.891-10.228-12.73s-.114-2.835.808-3.751c.825-.824 1.838-2.147 2.759-3.22s1.224-1.84 1.836-3.065.307-2.301-.153-3.22-4.032-10.011-5.666-13.647"/>
        </svg>
     </a>
+    
+    <div class="social-media-links">
+      <a href="https://www.facebook.com/profile.php?id=61557279615660&wtsid=rdr_0e17QNhSBPJL55WFB" target="_blank">
+        <img src="facebook-icon.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/blackbirdmusicacademy1?igsh=aWsyYjk3aXUxbWp4" target="_blank">
+        <img src="instagram-icon.png" alt="Instagram">
+      </a>
+      </div>
   </div>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
